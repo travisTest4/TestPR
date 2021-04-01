@@ -1,0 +1,23 @@
+language: c
+jobs:
+  include:
+    - dist: xenial
+      arch: amd64
+      script:
+        - clang -coverage -O0 hello_world.c -o hello_world
+        - ./hello_world
+    - dist: bionic
+      arch: amd64
+      script:
+        - clang -coverage -O0 hello_world.c -o hello_world
+        - ./hello_world
+    - dist: focal
+      arch: amd64
+      script:
+        - clang -coverage -O0 hello_world.c -o hello_world
+        - ./hello_world
+    - os: osx
+      arch: amd64
+      script:
+        - clang -coverage -O0 hello_world.c -o hello_world
+        - ./hello_world
